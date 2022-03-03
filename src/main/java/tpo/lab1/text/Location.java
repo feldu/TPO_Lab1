@@ -1,10 +1,27 @@
 package tpo.lab1.text;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class Location {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Location extends CanBeLocated {
+    @Getter
+    private final List<LocationPlaceholder> locationPlaceholders = new ArrayList<>();
+    @Getter
+    @Setter
     private String name;
-    private Coordinates coordinates;
-    private Size size;
+
+    public Location(Coordinates coordinates, Size size) {
+        super(coordinates, size);
+    }
+
+    public boolean tryAddPlaceholder(LocationPlaceholder locationPlaceholder) {
+        if (locationPlaceholder == null) return false;
+        if (!locationPlaceholder.isPartiallyInsideOther(this)) return false;
+        if (locationPlaceholder.isPartiallyOutsideOther(this)) return false;
+        locationPlaceholders.add(locationPlaceholder);
+        return true;
+    }
 }
