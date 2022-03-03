@@ -9,7 +9,7 @@ import static java.lang.Math.PI;
 public class Sec implements Calculable {
     @Override
     public BigDecimal calculate(double x) {
-        if ((x % (PI / 2) == 0 || x % ((3 * PI) / 2) == 0) && x != 0) return null; //todo: mb exception?
+        if ((x % (PI / 2) == 0 || x % ((3 * PI) / 2) == 0) && x % PI != 0) return null;
 
         BigDecimal cos = new BigDecimal(0);
         for (int n = 0; n < 100; n++) {
