@@ -35,14 +35,14 @@ public class SecFunctionTest {
     @ValueSource(doubles = {-2 * PI, -PI, 0, PI, 2 * PI})
     @DisplayName("Test function in peaks")
     void checkPeaks(double x) {
-        assertEquals(sec.calculate(x).doubleValue(), 1 / cos(x), 0.00001);
+        assertEquals(1 / cos(x), sec.calculate(x).doubleValue(), 0.00001);
     }
 
     @ParameterizedTest(name = "{index}. Test sec({0}) in small derivative areas ")
     @ValueSource(doubles = {-5 * PI / 4, -3 * PI / 4, -PI / 4, 3 * PI / 4, 5 * PI / 4})
     @DisplayName("Test function in small derivative areas")
     void checkIntervalsWithSmoothDerivativeChange(double x) {
-        assertEquals(sec.calculate(x).doubleValue(), 1 / cos(x), 0.00001);
+        assertEquals(1 / cos(x), sec.calculate(x).doubleValue(), 0.00001);
     }
 
     @ParameterizedTest(name = "{index}. Test sec({0}) in large derivative areas ")
@@ -53,7 +53,7 @@ public class SecFunctionTest {
     })
     @DisplayName("Test function in large derivative areas")
     void checkIntervalsWithSignificantDerivativeChange(double x) {
-        assertEquals(sec.calculate(x).doubleValue(), 1 / cos(x), 0.00001);
+        assertEquals(1 / cos(x), sec.calculate(x).doubleValue(), 0.00001);
     }
 
     /*
@@ -66,13 +66,13 @@ public class SecFunctionTest {
     @ValueSource(doubles = {-10e15, 10e15})
     @DisplayName("Test function in big X values")
     void checkBigX(double x) {
-        assertEquals(sec.calculate(x).doubleValue(), 1 / cos(x), 0.00001);
+        assertEquals(1 / cos(x), sec.calculate(x).doubleValue(), 0.00001);
     }
 
     @ParameterizedTest(name = "{index}. Test sec({0}) in small X values")
     @ValueSource(doubles = {-10e-15, 10e-15})
     @DisplayName("Test function in small X values")
     void checkSmallX(double x) {
-        assertEquals(sec.calculate(x).doubleValue(), 1 / cos(x), 0.00001);
+        assertEquals(1 / cos(x), sec.calculate(x).doubleValue(), 0.00001);
     }
 }
