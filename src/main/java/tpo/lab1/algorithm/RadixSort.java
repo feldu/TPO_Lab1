@@ -8,6 +8,8 @@ public class RadixSort implements SortAlgorithm {
     // Radix Sort
     @Override
     public void sort(int[] arr) {
+        if (arr == null) throw new NullPointerException();
+        if (arr.length == 0) return;
         // Find the maximum number to know number of digits
         int m = getMax(arr);
         // Do counting sort for every digit. Note that
