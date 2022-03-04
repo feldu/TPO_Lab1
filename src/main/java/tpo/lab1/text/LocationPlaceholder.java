@@ -9,6 +9,9 @@ public class LocationPlaceholder extends CanBeLocated {
     @Getter
     @Setter
     private String name;
+    @Getter
+    @Setter
+    private Color color;
 
     public LocationPlaceholder(Coordinates coordinates, Size size, Location location) {
         super(coordinates, size);

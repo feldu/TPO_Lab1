@@ -20,29 +20,29 @@ public class CanBeLocated {
 
     private boolean isLeftTopPointInsideLocation(CanBeLocated other) {
         return other.getCoordinates().getX() <= this.getCoordinates().getX()
-                && other.getCoordinates().getY() <= this.getCoordinates().getY() + this.getSize().getHeight()
-                && other.getCoordinates().getX() + other.getSize().getWidth() >= this.getCoordinates().getX()
-                && other.getCoordinates().getY() + other.getSize().getHeight() >= this.getCoordinates().getY() + this.getSize().getHeight();
+                && other.getCoordinates().getY() <= this.getCoordinates().getY() + this.getSize().getHeight() - 1
+                && other.getCoordinates().getX() + other.getSize().getWidth() - 1 >= this.getCoordinates().getX()
+                && other.getCoordinates().getY() + other.getSize().getHeight() - 1 >= this.getCoordinates().getY() + this.getSize().getHeight() - 1;
     }
 
     private boolean isRightBottomPointInsideLocation(CanBeLocated other) {
-        return other.getCoordinates().getX() <= this.getCoordinates().getX() + this.getSize().getWidth()
+        return other.getCoordinates().getX() <= this.getCoordinates().getX() + this.getSize().getWidth() - 1
                 && other.getCoordinates().getY() <= this.getCoordinates().getY()
-                && other.getCoordinates().getX() + other.getSize().getWidth() >= this.getCoordinates().getX() + this.getSize().getWidth()
-                && other.getCoordinates().getY() + other.getSize().getHeight() >= this.getCoordinates().getY();
+                && other.getCoordinates().getX() + other.getSize().getWidth() - 1 >= this.getCoordinates().getX() + this.getSize().getWidth() - 1
+                && other.getCoordinates().getY() + other.getSize().getHeight() - 1 >= this.getCoordinates().getY();
     }
 
     private boolean isRightTopPointInsideLocation(CanBeLocated other) {
-        return other.getCoordinates().getX() <= this.getCoordinates().getX() + this.getSize().getWidth()
-                && other.getCoordinates().getY() <= this.getCoordinates().getY() + this.getSize().getHeight()
-                && other.getCoordinates().getX() + other.getSize().getWidth() >= this.getCoordinates().getX() + this.getSize().getWidth()
-                && other.getCoordinates().getY() + other.getSize().getHeight() >= this.getCoordinates().getY() + this.getSize().getHeight();
+        return other.getCoordinates().getX() <= this.getCoordinates().getX() + this.getSize().getWidth() - 1
+                && other.getCoordinates().getY() <= this.getCoordinates().getY() + this.getSize().getHeight() - 1
+                && other.getCoordinates().getX() + other.getSize().getWidth() - 1 >= this.getCoordinates().getX() + this.getSize().getWidth() - 1
+                && other.getCoordinates().getY() + other.getSize().getHeight() - 1 >= this.getCoordinates().getY() + this.getSize().getHeight() - 1;
     }
 
     private boolean isLeftBottomPointInsideLocation(CanBeLocated other) {
         return other.getCoordinates().getX() <= this.getCoordinates().getX()
                 && other.getCoordinates().getY() <= this.getCoordinates().getY()
-                && other.getCoordinates().getX() + other.getSize().getWidth() >= this.getCoordinates().getX()
-                && other.getCoordinates().getY() + other.getSize().getHeight() >= this.getCoordinates().getY();
+                && other.getCoordinates().getX() + other.getSize().getWidth() - 1 >= this.getCoordinates().getX()
+                && other.getCoordinates().getY() + other.getSize().getHeight() - 1 >= this.getCoordinates().getY();
     }
 }

@@ -1,11 +1,13 @@
 package tpo.lab1.text;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = false)
 public class Location extends CanBeLocated {
     @Getter
     private final List<LocationPlaceholder> locationPlaceholders = new ArrayList<>();

@@ -11,6 +11,7 @@ public class Word {
 
     public boolean tryAddLocation(Location location) {
         if (location == null) return false;
+        if (locations.stream().anyMatch(location::equals)) return false;
         for (Location l : locations) {
             if (location.isPartiallyInsideOther(l)) return false;
             if (l.isPartiallyInsideOther(location)) return false;

@@ -9,13 +9,13 @@ public class Coordinates {
     private int Y;
 
     public boolean trySetX(int X) {
-        if (X < 0) return false;
+        if (X <= 0) return false;
         this.X = X;
         return true;
     }
 
     public boolean trySetY(int Y) {
-        if (Y < 0) return false;
+        if (Y <= 0) return false;
         this.Y = Y;
         return true;
     }
